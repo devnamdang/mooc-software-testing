@@ -17,4 +17,22 @@ public class CountLettersTest {
         Assertions.assertEquals(1, words);
     }
 
+    @Test
+    public void lastIsR() {
+        int words = new CountLetters().count("cats|beaver");
+        Assertions.assertEquals(2, words);
+    }
+
+    @Test
+    public void midWordWithR() {
+        int words = new CountLetters().count("beaver|dog");
+        Assertions.assertEquals(1, words);
+    }
+
+    @Test
+    public void midWordNotROrS() {
+        int words = new CountLetters().count("cat|dog");
+        Assertions.assertEquals(0, words);
+    }
+
 }
